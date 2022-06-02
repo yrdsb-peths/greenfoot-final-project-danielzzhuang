@@ -19,7 +19,7 @@ public class Cat extends Actor
 
     public Cat(){
         for(int i = 0; i < idle.length; i++){
-            idle[i]=new GreenfootImage("images/cat_idle/cat" + i + ".png");
+            idle[i] = new GreenfootImage("images/cat_idle/cat" + i + ".png");
         }
         setImage(idle[0]);
     }
