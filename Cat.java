@@ -16,10 +16,10 @@ public class Cat extends Actor
     private final int GRAVITY = 1;
     private int velocity;
     private boolean isFacingRight=true;
-    
+
     public Cat(){
         for(int i = 0; i < idle.length; i++){
-            idle[i]=new GreenfootImage("images/cat_idle/idle"+i+".png");
+            idle[i]=new GreenfootImage("images/cat_idle/cat" + i + ".png");
         }
         setImage(idle[0]);
     }
@@ -28,6 +28,7 @@ public class Cat extends Actor
         setImage(idle[imageIndex]);
         imageIndex = (imageIndex + 1) % idle.length;
     }
+
     public void act()
     {
         fall();
@@ -37,16 +38,17 @@ public class Cat extends Actor
         }
         animateCat();
     }
+
     public void move(){
         int x=getX();
         int y=getY();
         /*if(Greenfoot.isKeyDown("W")){
-            y-=2;
+        y-=2;
         }
         if(Greenfoot.isKeyDown("S")){
-            y+=2;
+        y+=2;
         }
-        */
+         */
         if(Greenfoot.isKeyDown("A")){
             isFacingRight=true;
             x-=4;
@@ -57,6 +59,7 @@ public class Cat extends Actor
         }
         setLocation(x,y);
     }
+
     public void fall(){
         setLocation(getX(), getY() + velocity);
         if(getY()>getWorld().getHeight()-50){
@@ -66,8 +69,9 @@ public class Cat extends Actor
             velocity+=GRAVITY;
         }
     }
+
     public void jump(){
         velocity = -20;
     }
-    
+
 }
