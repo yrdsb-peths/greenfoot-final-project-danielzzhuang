@@ -8,25 +8,44 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Cat extends Actor
 {
-    GreenfootImage[] idle = new GreenfootImage[4];
+    GreenfootImage[] idleLeft = new GreenfootImage[9];
+    GreenfootImage[] idleRight = new GreenfootImage[9];
     /**
      * Act - do whatever the Cat wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private final int GRAVITY = 1;
     private int velocity;
-    private boolean isFacingRight=true;
-
+    
+    String facing = "left";
+    SimpleTimer animationTimer = new SimpleTimer();
     public Cat(){
-        for(int i = 0; i < idle.length; i++){
-            idle[i] = new GreenfootImage("images/cat_idle/cat" + i + ".png");
+        for(int i = 0; i < idleLeft.length; i++){
+            idleLeft[i] = new GreenfootImage("images/cat_idle/cat" + i + ".png");
+            idleLeft[i].scale(80, 80);
         }
-        setImage(idle[0]);
+        for(int i=0; i<idleRight.length; i++){
+            idleRight[i] = new GreenfootImage("images/cat_idle/cat" + i + ".png");
+            idleRight[i].mirrorHorizontally();
+            idleRight[i].scale(80, 80);
+        }
+        animationTimer.mark();
+        setImage(idleLeft[0]);
     }
     int imageIndex=0;
     public void animateCat(){
-        setImage(idle[imageIndex]);
-        imageIndex = (imageIndex + 1) % idle.length;
+        if(animationTimer.millisElapsed() < 20){
+            return;
+        }
+        animationTimer.mark();
+        if(facing.equals("right")){
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleRight.length;
+        }
+        else{
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        }
     }
 
     public void act()
@@ -50,11 +69,11 @@ public class Cat extends Actor
         }
          */
         if(Greenfoot.isKeyDown("A")){
-            isFacingRight=true;
+            facing = "left";
             x-=4;
         }
         if(Greenfoot.isKeyDown("D")){
-            isFacingRight=false;
+            facing = "right";
             x+=4;
         }
         setLocation(x,y);
@@ -71,7 +90,7 @@ public class Cat extends Actor
     }
 
     public void jump(){
-        velocity = -20;
+        velocity = -10;
     }
 
 }
