@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Cat extends Actor
 {
-    GreenfootImage idle = new GreenfootImage("images/cat_idle/cat01.png");
+    GreenfootImage[] idle = new GreenfootImage[4];
     /**
      * Act - do whatever the Cat wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,7 +18,15 @@ public class Cat extends Actor
     private boolean isFacingRight=true;
     
     public Cat(){
-        setImage(idle);
+        for(int i = 0; i < idle.length; i++){
+            idle[i]=new GreenfootImage("images/cat_idle/idle"+i+".png");
+        }
+        setImage(idle[0]);
+    }
+    int imageIndex=0;
+    public void animateCat(){
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
     }
     public void act()
     {
@@ -27,6 +35,7 @@ public class Cat extends Actor
         if(Greenfoot.isKeyDown("space") && getY()>getWorld().getHeight()-50){
             jump();
         }
+        animateCat();
     }
     public void move(){
         int x=getX();
