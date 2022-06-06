@@ -21,11 +21,11 @@ public class Cat extends Actor
     SimpleTimer animationTimer = new SimpleTimer();
     public Cat(){
         for(int i = 0; i < idleLeft.length; i++){
-            idleLeft[i] = new GreenfootImage("images/cat_idle/cat" + i + ".png");
+            idleLeft[i] = new GreenfootImage("images/grayCat_idle/cat" + i + ".png");
             idleLeft[i].scale(80, 80);
         }
         for(int i=0; i<idleRight.length; i++){
-            idleRight[i] = new GreenfootImage("images/cat_idle/cat" + i + ".png");
+            idleRight[i] = new GreenfootImage("images/grayCat_idle/cat" + i + ".png");
             idleRight[i].mirrorHorizontally();
             idleRight[i].scale(80, 80);
         }
