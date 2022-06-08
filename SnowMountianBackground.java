@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SnowMountianBackground extends Actor
 {
-    GifImage backgroundGif = new GifImage("snowMountian_idle/snowMountianBackGround.gif");
+    GifImage backgroundGif = new GifImage("snowMountian_idle/snow.gif");
     
     /**
      * Act - do whatever the snowMountianBackGround wants to do. This method is called whenever
