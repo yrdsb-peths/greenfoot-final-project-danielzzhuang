@@ -15,17 +15,25 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(900, 600, 1); 
         SnowMountianBackground bg=new SnowMountianBackground();
         
         addObject(bg, getWidth()/2, getHeight()/2);
+        
+        addBackPackPage();
+        
 
-        prepare();
+
     }
 
     public void prepare()
     {
         Cat cat = new Cat();
         addObject(cat,300,300);
+    }
+    public void addBackPackPage()
+    {
+        BackPack backPack = new BackPack();
+        addObject(backPack,80,550);
     }
 }
