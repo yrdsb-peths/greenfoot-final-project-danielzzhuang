@@ -6,14 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ClownFish extends Actor
+public class Fish extends Actor
 {
-    public int clownFishNumber=0;
+    public static int clownFishNumber=0;
     GreenfootImage[] images = new GreenfootImage[14];
     
-    public ClownFish(int num){
+    public Fish(int num){
         for(int i = 0; i < images.length; i++){
-            images[i] = new GreenfootImage("images/clownFish" + i +".png");
+            images[i] = new GreenfootImage("images/fish/Fish" + i +".png");
         }
         setImage(images[num]);
     }
