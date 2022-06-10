@@ -19,7 +19,6 @@ public class MyWorld extends World
         SnowMountianBackground bg=new SnowMountianBackground();
         addObject(bg, getWidth()/2, getHeight()/2);
         
-        addBackPackPage();
         
         
 
@@ -28,8 +27,7 @@ public class MyWorld extends World
 
     public void prepare()
     {
-        Cat cat = new Cat();
-        addObject(cat,300,300);
+        
     }
     public void addBackPackPage()
     {

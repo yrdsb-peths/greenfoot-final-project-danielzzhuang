@@ -17,7 +17,7 @@ public class Fishing extends World
     public Fishing()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(900, 600, 1); 
         if(Greenfoot.isKeyDown("space")){
             int randomFishGroup = Greenfoot.getRandomNumber(3);
             if(randomFishGroup==0){
@@ -35,12 +35,13 @@ public class Fishing extends World
         }
     }
     public void fishGroup0(){
+        int randomFish = Greenfoot.getRandomNumber(5);
         
     }
     public void fishGroup1(){
-        
+        int randomFish = Greenfoot.getRandomNumber(5);
     }
     public void fishGroup2(){
-        
+        int randomFish = Greenfoot.getRandomNumber(5);
     }
 }
