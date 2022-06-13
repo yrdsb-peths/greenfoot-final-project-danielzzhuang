@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BackPack extends Actor
 {
+    public boolean BackPackIsOpen=false;
     /**
      * Act - do whatever the BackPackPage wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,8 +16,7 @@ public class BackPack extends Actor
     public void act()
     {
         if (Greenfoot.mouseClicked(this)){
-            BackPackPage BKpage = new BackPackPage();
-            Greenfoot.setWorld(BKpage);
+            BackPackIsOpen=false;
         }
     }
     public BackPack(){

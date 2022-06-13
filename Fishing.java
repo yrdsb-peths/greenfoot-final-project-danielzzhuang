@@ -10,6 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Fishing extends World
 {
     public int totalFish=0;
+    boolean backPack=true;
     /**
      * Constructor for objects of class Fishing.
      * 
@@ -33,10 +34,16 @@ public class Fishing extends World
                 totalFish++;
             }
         }
+        Fish clownFish = new Fish(0, "clownFish");
+        
+        
+        Fish duck = new Fish(13, "duck");
     }
     public void fishGroup0(){
         int randomFish = Greenfoot.getRandomNumber(5);
-        
+        if(randomFish==0){
+            
+        }
     }
     public void fishGroup1(){
         int randomFish = Greenfoot.getRandomNumber(5);

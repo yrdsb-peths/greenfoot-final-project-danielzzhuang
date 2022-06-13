@@ -18,16 +18,20 @@ public class MyWorld extends World
         super(900, 600, 1); 
         SnowMountianBackground bg=new SnowMountianBackground();
         addObject(bg, getWidth()/2, getHeight()/2);
+        prepare();
         
-        
-        
+        /*if(BackPackIsOpen==true){
+            BackPackPage BKpage = new BackPackPage();
+            addObject(BKpage, 450, 300);
+        }*/
 
 
     }
 
     public void prepare()
     {
-        
+        Cat cat = new Cat();
+        addObject(cat,300,300);
     }
     public void addBackPackPage()
     {

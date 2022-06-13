@@ -1,30 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BackPack here.
+ * Write a description of class BackPackPage here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BackPackPage extends World
+public class BackPackPage extends Actor
 {
-
     /**
-     * Constructor for objects of class BackPack.
-     * 
+     * Act - do whatever the BackPackPage wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public BackPackPage()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-        prepare();
-    }
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
+    public void act()
     {
-        
+        // Add your action code here.
     }
 }

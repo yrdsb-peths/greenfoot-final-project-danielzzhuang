@@ -10,15 +10,14 @@ public class Fish extends Actor
 {
     public static int clownFishNumber=0;
     GreenfootImage[] images = new GreenfootImage[14];
-    String [] fishNameArr = {"clownFish", ""};
     private String fishName;
     private int fishNumber;
-    public Fish(int fishNum){
+    public Fish(int fishNum, String name){
         for(int i = 0; i < images.length; i++){
             images[i] = new GreenfootImage("images/fish/Fish" + i +".png");
         }
         setImage(images[fishNum]);
-        fishName = fishNameArr[fishNum];
+        fishName = name;
         fishNumber=0;
     }
     
@@ -30,7 +29,7 @@ public class Fish extends Actor
     {
         // Add your action code here.
     }
-    public int setFishNum(int fishNum, int amount){
+    /*public int setFishNum(int fishNum, int amount){
         
-    }
+    }*/
 }
