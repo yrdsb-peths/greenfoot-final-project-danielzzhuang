@@ -8,19 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Fish extends Actor
 {
-    public static int clownFishNumber=0;
-    GreenfootImage[] images = new GreenfootImage[14];
     private String fishName;
     private int fishNumber;
     public Fish(int fishNum, String name){
-        for(int i = 0; i < images.length; i++){
-            images[i] = new GreenfootImage("images/fish/Fish" + i +".png");
-        }
-        setImage(images[fishNum]);
+        fishNumber = fishNum;
         fishName = name;
-        fishNumber=0;
     }
-    
+    public void addFishNumber(int num){
+        fishNumber+=num;
+    }
     /**
      * Act - do whatever the ClownFish wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
