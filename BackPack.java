@@ -16,7 +16,7 @@ public class BackPack extends Actor
     public void act()
     {
         if (Greenfoot.mouseClicked(this)){
-            BackPackIsOpen=false;
+            BackPackIsOpen=true;
         }
     }
     public BackPack(){

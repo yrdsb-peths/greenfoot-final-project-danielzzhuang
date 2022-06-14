@@ -27,7 +27,12 @@ public class MyWorld extends World
 
 
     }
-
+    public void act(){
+        if(Greenfoot.isKeyDown("s")){
+            Fishing fWorld = new Fishing();
+            Greenfoot.setWorld(fWorld);
+        }
+    }
     public void prepare()
     {
         Cat cat = new Cat();
