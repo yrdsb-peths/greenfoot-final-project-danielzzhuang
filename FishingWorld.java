@@ -15,7 +15,16 @@ public class FishingWorld extends World
      * Constructor for objects of class Fishing.
      * 
      */
+    
+    GreenfootImage[] idleRodWaiting = new GreenfootImage[3];
+    GreenfootImage[] idleFishingType0 = new GreenfootImage[4];
+    GreenfootImage[] idleFishingType1 = new GreenfootImage[4];
+    GreenfootImage[] idleFishingType2 = new GreenfootImage[3];
+    
+    SimpleTimer animationTimer_FishingRod = new SimpleTimer();
     public boolean backpackOpen=false;
+    
+    
     public FishingWorld(){
         super(900,600,1);
         
@@ -69,7 +78,7 @@ public class FishingWorld extends World
     }*/
     
     public void beginFishing(){
-        // show the fishing rod image
+        CastFishingRod.animateFishingRod();
         isFishing = true;
     }
     

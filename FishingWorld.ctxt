@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=FishingWorld
-comment0.text=\n\ Write\ a\ description\ of\ class\ Fishing\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Fishing\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=FishingWorld()
 comment2.params=
 comment2.target=void\ addCat()
 comment3.params=
 comment3.target=void\ beginFishing()
-comment3.text=\n\ \ \ \ public\ void\ startFishing(){\n\ \ \ \ \ \ \ \ if(Greenfoot.isKeyDown("s")){\n\ \ \ \ \ \ \ \ \ \ \ \ int\ randomFishingType\ \=\ Greenfoot.getRandomNumber(10);\n\ \ \ \ \ \ \ \ \ \ \ \ if(randomFishingType\=\=0){\n\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(Greenfoot.isKeyDown("space")){\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ randomFish\ \=\ Greenfoot.getRandomNumber(15);\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ addAmountFish(randomFish);\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else{\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animateFishingRod();\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ }\n}
+comment3.text=\r\n\ \ \ \ public\ void\ startFishing(){\r\n\ \ \ \ \ \ \ \ if(Greenfoot.isKeyDown("s")){\r\n\ \ \ \ \ \ \ \ \ \ \ \ int\ randomFishingType\ \=\ Greenfoot.getRandomNumber(10);\r\n\ \ \ \ \ \ \ \ \ \ \ \ if(randomFishingType\=\=0){\r\n\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(Greenfoot.isKeyDown("space")){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ randomFish\ \=\ Greenfoot.getRandomNumber(15);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ addAmountFish(randomFish);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else{\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animateFishingRod();\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n}
 comment4.params=
 comment4.target=void\ act()
 numComments=5
