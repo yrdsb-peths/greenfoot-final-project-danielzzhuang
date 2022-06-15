@@ -18,7 +18,7 @@ public class Cat extends Actor
         for(int i=0; i<idleGrayCat.length; i++){
             idleGrayCat[i] = new GreenfootImage("images/grayCatStandBy_idle/cat" + i + ".png");
             setImage(idleGrayCat[i]);
-            idleGrayCat[i].scale(120, 120);
+            idleGrayCat[i].scale(180, 180);
         }
         animationTimer_grayCat.mark();
     }
