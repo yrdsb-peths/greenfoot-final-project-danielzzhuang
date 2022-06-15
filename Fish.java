@@ -10,7 +10,7 @@ public class Fish extends Actor
 {
     private String fishName;
     private int fishNumber;
-    private int[] AmountFish = new int[14];
+    private static int[] amountFish = new int[14];
     GreenfootImage[] images = new GreenfootImage[14];
 
     public Fish(int fishNumber, String name){
@@ -20,6 +20,8 @@ public class Fish extends Actor
         setImage(images[fishNumber]);
         fishNumber = fishNumber;
         fishName = name;
+        
+        amountFish[fishNumber]++;
     }
     public void addAmountFish(int num){
         AmountFish[num]++;

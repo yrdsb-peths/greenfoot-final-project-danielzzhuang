@@ -19,7 +19,7 @@ public class FishingWorld extends World
         
         addCat();
         
-        BackpackPage bkPage = new BackpackPage();
+        BackPackPage bkPage = new BackPackPage();
         if(Greenfoot.isKeyDown("B")){
             addObject(bkPage, 450, 300);
             backpackOpen=true;
@@ -48,6 +48,10 @@ public class FishingWorld extends World
     {
         Cat cat = new Cat();
         addObject(cat,250,560);
+    }
+    
+    public void addFish(){
+        
     }
     
 }

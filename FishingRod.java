@@ -15,7 +15,7 @@ public class FishingRod extends Actor
     GreenfootImage[] idleFishingRod = new GreenfootImage[3];
     GreenfootImage[] idleFishingType0 = new GreenfootImage[3];
     SimpleTimer animationTimer_FishingRod = new SimpleTimer();
-    
+
     public FishingRod()
     {    
         for(int i=0; i<idleFishingRod.length; i++){
@@ -24,7 +24,7 @@ public class FishingRod extends Actor
             idleFishingRod[i].scale(120, 120);
         }
         animationTimer_FishingRod.mark();
-        
+
     }
     int imageIndex_f=0;
     public void animateFishingRod(){
@@ -34,17 +34,18 @@ public class FishingRod extends Actor
         animationTimer_FishingRod.mark();
         setImage(idleFishingRod[imageIndex_f]);
         imageIndex_f = (imageIndex_f + 1) % idleFishingRod.length;
-        }
-    
+    }
+
     public void act()
     {
-        
+
         if(Greenfoot.isKeyDown("r")){
-            
+
         }
     }
+
     public void startFishing(){
-        
+
         if(Greenfoot.isKeyDown("space")){
             int randomFishingType = Greenfoot.getRandomNumber(10);
             if(randomFishingType==0){
@@ -53,9 +54,9 @@ public class FishingRod extends Actor
                     int randomFish = Greenfoot.getRandomNumber(15);
                     addAmountFish(randomFish);
                 }
-            else{
-                animateFishingRod();
-            }
+                else{
+                    animateFishingRod();
+                }
             }
         }
     }
