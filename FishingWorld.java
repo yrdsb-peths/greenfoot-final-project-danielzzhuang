@@ -9,6 +9,8 @@ import java.util.*;
 
 public class FishingWorld extends World
 {
+    boolean isFishing = false;
+    boolean canCatchFish = false;
     /**
      * Constructor for objects of class Fishing.
      * 
@@ -20,10 +22,10 @@ public class FishingWorld extends World
         addCat();
         
         BackPackPage bkPage = new BackPackPage();
-        if(Greenfoot.isKeyDown("B")){
+        if(Greenfoot.isKeyDown("b")){
             addObject(bkPage, 450, 300);
             backpackOpen=true;
-            if(Greenfoot.isKeyDown("B")){
+            if(Greenfoot.isKeyDown("b")){
                 removeObject(bkPage);
             }
         }
@@ -66,4 +68,28 @@ public class FishingWorld extends World
         }
     }*/
     
+    public void beginFishing(){
+        // show the fishing rod image
+        isFishing = true;
+    }
+    
+    
+    
+    public void act(){
+        if(isFishing){
+            // 
+            if (!canCatchFish) {
+                //randomnumber from 0 - 100
+                // if number > 95 then
+                //    show the animiated rod
+                //    canCatchFish = true
+            }
+            
+        }
+        if(canCatchFish){
+            if(Greenfoot.isKeyDown("space")){
+                // do whatever to catch fish
+            }
+        }
+    }
 }

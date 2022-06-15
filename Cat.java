@@ -30,8 +30,16 @@ public class Cat extends Actor
         animationTimer_grayCat.mark();
         setImage(idleGrayCat[imageIndex]);
         imageIndex = (imageIndex + 1) % idleGrayCat.length;
-        }
+    }
+
     public void act(){
         animateCat();
+        
+        // Cast the rod
+        if(Greenfoot.isKeyDown("c")){
+            // Show the fishing rod image
+            // world.beginFishing();
+            
+        }
     }
-    }
+}
