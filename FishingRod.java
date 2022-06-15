@@ -44,7 +44,7 @@ public class FishingRod extends Actor
         }
     }
     public void startFishing(){
-        /*
+        
         if(Greenfoot.isKeyDown("space")){
             int randomFishingType = Greenfoot.getRandomNumber(10);
             if(randomFishingType==0){
@@ -57,6 +57,6 @@ public class FishingRod extends Actor
                 animateFishingRod();
             }
             }
-        }*/
+        }
     }
 }
