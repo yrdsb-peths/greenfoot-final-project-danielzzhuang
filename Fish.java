@@ -24,7 +24,7 @@ public class Fish extends Actor
         amountFish[fishNumber]++;
     }
     public void addAmountFish(int num){
-        AmountFish[num]++;
+        amountFish[num]++;
     }
     /**
      * Act - do whatever the ClownFish wants to do. This method is called whenever

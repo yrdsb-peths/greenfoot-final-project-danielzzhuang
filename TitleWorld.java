@@ -33,7 +33,6 @@ public class TitleWorld extends World
         addObject(instructionLabel, getWidth()/2, 500);
         
 
-
     }
     public void act()
     {

@@ -49,9 +49,21 @@ public class FishingWorld extends World
         Cat cat = new Cat();
         addObject(cat,250,560);
     }
-    
-    public void addFish(){
-        
-    }
+    /*
+    public void startFishing(){
+        if(Greenfoot.isKeyDown("s")){
+            int randomFishingType = Greenfoot.getRandomNumber(10);
+            if(randomFishingType==0){
+
+                if(Greenfoot.isKeyDown("space")){
+                    int randomFish = Greenfoot.getRandomNumber(15);
+                    addAmountFish(randomFish);
+                }
+                else{
+                    animateFishingRod();
+                }
+            }
+        }
+    }*/
     
 }
