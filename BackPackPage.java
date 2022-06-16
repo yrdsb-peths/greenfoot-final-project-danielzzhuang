@@ -17,6 +17,13 @@ public class BackPackPage extends Actor
         image.scale(700,550);
         setImage(image);
     }
+    
+    public void hide(){
+        setLocation(getWorld().getWidth()/2, 1000);
+    }
+    public void show(){
+        setLocation(getWorld().getWidth()/2, 300);
+    }
     public void act()
     {
         // Add your action code here.

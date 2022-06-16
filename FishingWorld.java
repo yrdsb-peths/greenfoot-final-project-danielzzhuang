@@ -13,16 +13,18 @@ public class FishingWorld extends World
     boolean canCatchFish = false;
     public boolean backpackOpen=false;
     public boolean fishingRodExist=false;
+    public BackPackPage backpack;
+    SimpleTimer backpackTimer = new SimpleTimer();
+
     /**
      * Constructor for objects of class Fishing.
      * 
      */
-    
+
     public FishingWorld(){
-        super(900,600,1);
-        
+        super(900,600,1, false);
+
         addCat();
-        
 
         /*
         Fish clownFish = new Fish(0, "clownFish");
@@ -39,65 +41,56 @@ public class FishingWorld extends World
         Fish flyingFish = new Fish(11, "flyingFish");
         Fish yellowGrayFish = new Fish(12, "yellowGrayFish");
         Fish duck = new Fish(13, "duck");
-        */
+         */
+        backpack = new BackPackPage();        
+        addObject(backpack, 450, 300);
+
     }
+
     public void addCat()
     {
         Cat cat = new Cat();
         addObject(cat,250,560);
     }
-    
+
     public void castFishingRod(){
         CastFishingRod fishingRod_c = new CastFishingRod();
         addObject(fishingRod_c, 280, 500);
     }
-    
+
     public void fishingRodWaiting(){
         FishingRodWaiting fishingRod_w = new FishingRodWaiting();
         addObject(fishingRod_w, 284, 500);
     }
-    
+
     public void fishingEvent0(){
         FishingEvent0 fishingEvent0 = new FishingEvent0();
         addObject(fishingEvent0, 284, 500);
     }
-    
+
     public void fishingEvent1(){
         FishingEvent1 fishingEvent1 = new FishingEvent1();
         addObject(fishingEvent1, 284, 500);
     }
-    
+
     public void fishingEvent2(){
         FishingEvent2 fishingEvent2 = new FishingEvent2();
         addObject(fishingEvent2, 284, 500);
     }
-    
+
     public void fishingRodStay(){
         FishingRodStay fishingRodStay=new FishingRodStay();
         addObject(fishingRodStay, 284, 500);
     }
-    
-    
-    public void backpackPage(){
-        BackPackPage bkPage = new BackPackPage();
-        if(backpackOpen){
-            addObject(bkPage, 450, 300);
-        }
-        else{
-            removeObject(bkPage);
-        }
-    }
-    
-    
+
     
     public void act(){
-        
         if(isFishing){
             if (!canCatchFish) {
                 fishingRodWaiting();
                 int randomFishingEvent = Greenfoot.getRandomNumber(100);
                 if(randomFishingEvent>82){
-                    
+
                 }
                 else{
                     canCatchFish=true;
@@ -115,19 +108,23 @@ public class FishingWorld extends World
             if(canCatchFish){
                 if(Greenfoot.isKeyDown("space")){
                     int randomFish = Greenfoot.getRandomNumber(13);
-                    
+
                 }
             }
         }
-        
-        
-        if(Greenfoot.isKeyDown("b")){
-            backpackOpen=true;
-            backpackPage();
+
+        if(backpackOpen){
+            backpack.show();
+        } else {
+            backpack.hide();
+        }
+
+        if(backpackTimer.millisElapsed() > 300){
             if(Greenfoot.isKeyDown("b")){
-                backpackOpen=false;
-                backpackPage();
+                backpackOpen=!backpackOpen;
+                backpackTimer.mark();
             }
         }
+
     }
 }
