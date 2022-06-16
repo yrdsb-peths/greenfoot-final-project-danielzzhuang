@@ -22,7 +22,7 @@ public class TitleWorld extends World
         Label titleLabel = new Label("Fishing Game", 100);
         addObject(titleLabel, getWidth()/2, 100);
         
-        Label instructionLabel_0 = new Label("Press <F> to fish when you in game", 60);
+        Label instructionLabel_0 = new Label("Press <C> to fish when you in game", 60);
         addObject(instructionLabel_0, getWidth()/2, 300);
         Label instructionLabel_1 = new Label("Press <R> to retract FishingRod", 60);
         addObject(instructionLabel_1, getWidth()/2, 350);

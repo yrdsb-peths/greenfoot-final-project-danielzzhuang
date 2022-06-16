@@ -11,33 +11,19 @@ public class FishingWorld extends World
 {
     boolean isFishing = false;
     boolean canCatchFish = false;
+    public boolean backpackOpen=false;
+    public boolean fishingRodExist=false;
     /**
      * Constructor for objects of class Fishing.
      * 
      */
-    
-    GreenfootImage[] idleRodWaiting = new GreenfootImage[3];
-    GreenfootImage[] idleFishingType0 = new GreenfootImage[4];
-    GreenfootImage[] idleFishingType1 = new GreenfootImage[4];
-    GreenfootImage[] idleFishingType2 = new GreenfootImage[3];
-    
-    SimpleTimer animationTimer_FishingRod = new SimpleTimer();
-    public boolean backpackOpen=false;
-    
     
     public FishingWorld(){
         super(900,600,1);
         
         addCat();
         
-        BackPackPage bkPage = new BackPackPage();
-        if(Greenfoot.isKeyDown("b")){
-            addObject(bkPage, 450, 300);
-            backpackOpen=true;
-            if(Greenfoot.isKeyDown("b")){
-                removeObject(bkPage);
-            }
-        }
+
         /*
         Fish clownFish = new Fish(0, "clownFish");
         Fish blueFish = new Fish(1, "blueFish");
@@ -60,44 +46,87 @@ public class FishingWorld extends World
         Cat cat = new Cat();
         addObject(cat,250,560);
     }
-    /*
-    public void startFishing(){
-        if(Greenfoot.isKeyDown("s")){
-            int randomFishingType = Greenfoot.getRandomNumber(10);
-            if(randomFishingType==0){
-
-                if(Greenfoot.isKeyDown("space")){
-                    int randomFish = Greenfoot.getRandomNumber(15);
-                    addAmountFish(randomFish);
-                }
-                else{
-                    animateFishingRod();
-                }
-            }
-        }
-    }*/
     
-    public void beginFishing(){
-        CastFishingRod.animateFishingRod();
-        isFishing = true;
+    public void castFishingRod(){
+        CastFishingRod fishingRod_c = new CastFishingRod();
+        addObject(fishingRod_c, 280, 500);
+    }
+    
+    public void fishingRodWaiting(){
+        FishingRodWaiting fishingRod_w = new FishingRodWaiting();
+        addObject(fishingRod_w, 284, 500);
+    }
+    
+    public void fishingEvent0(){
+        FishingEvent0 fishingEvent0 = new FishingEvent0();
+        addObject(fishingEvent0, 284, 500);
+    }
+    
+    public void fishingEvent1(){
+        FishingEvent1 fishingEvent1 = new FishingEvent1();
+        addObject(fishingEvent1, 284, 500);
+    }
+    
+    public void fishingEvent2(){
+        FishingEvent2 fishingEvent2 = new FishingEvent2();
+        addObject(fishingEvent2, 284, 500);
+    }
+    
+    public void fishingRodStay(){
+        FishingRodStay fishingRodStay=new FishingRodStay();
+        addObject(fishingRodStay, 284, 500);
+    }
+    
+    
+    public void backpackPage(){
+        BackPackPage bkPage = new BackPackPage();
+        if(backpackOpen){
+            addObject(bkPage, 450, 300);
+        }
+        else{
+            removeObject(bkPage);
+        }
     }
     
     
     
     public void act(){
+        
         if(isFishing){
-            // 
             if (!canCatchFish) {
-                //randomnumber from 0 - 100
-                // if number > 95 then
-                //    show the animiated rod
-                //    canCatchFish = true
+                fishingRodWaiting();
+                int randomFishingEvent = Greenfoot.getRandomNumber(100);
+                if(randomFishingEvent>82){
+                    
+                }
+                else{
+                    canCatchFish=true;
+                    if(randomFishingEvent>=82 && randomFishingEvent<=88){
+                        fishingEvent0();
+                    }
+                    else if(randomFishingEvent>=88 && randomFishingEvent<=94){
+                        fishingEvent1();
+                    }
+                    else{
+                        fishingEvent2();
+                    }
+                }
             }
-            
+            if(canCatchFish){
+                if(Greenfoot.isKeyDown("space")){
+                    int randomFish = Greenfoot.getRandomNumber(13);
+                    
+                }
+            }
         }
-        if(canCatchFish){
-            if(Greenfoot.isKeyDown("space")){
-                // do whatever to catch fish
+        
+        
+        if(Greenfoot.isKeyDown("b")){
+            backpackOpen=true;
+            backpackPage();
+            if(Greenfoot.isKeyDown("b")){
+                backpackOpen=false;
+                backpackPage();
             }
         }
     }

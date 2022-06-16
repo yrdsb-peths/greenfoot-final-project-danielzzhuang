@@ -36,10 +36,10 @@ public class Cat extends Actor
         animateCat();
         
         // Cast the rod
+        FishingWorld world = (FishingWorld) getWorld();
         if(Greenfoot.isKeyDown("c")){
-            // Show the fishing rod image
-            // world.beginFishing();
-            
+            world.castFishingRod();
+            world.isFishing=true;
         }
     }
 }

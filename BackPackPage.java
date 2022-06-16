@@ -14,7 +14,7 @@ public class BackPackPage extends Actor
      */
     public BackPackPage(){
         GreenfootImage image = getImage();
-        image.scale(100,100);
+        image.scale(700,550);
         setImage(image);
     }
     public void act()

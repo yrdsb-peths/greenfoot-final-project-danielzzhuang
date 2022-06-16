@@ -6,22 +6,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CastFishingRod extends FishingWorld
+public class CastFishingRod extends Actor
 {
     GreenfootImage[] idleCastRod = new GreenfootImage[4];
     SimpleTimer animationTimer_cast = new SimpleTimer();
     /**
-     * Constructor for objects of class CastFishingRod.
-     * 
+     * Act - do whatever the FishingRod wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void CastFishingRod()
     {    
         for(int i=0; i < idleCastRod.length; i++){
             idleCastRod[i] = new GreenfootImage("images/fcastRod_idle/castRod" + i + ".png");
             setImage(idleCastRod[i]);
-            idleCastRod[i].scale(120, 120);
+            idleCastRod[i].scale(250, 250);
         }
-        animationTimer_FishingRod.mark();
+        animationTimer_cast.mark();
 
     }
     int imageIndex_f=0;
@@ -32,5 +32,9 @@ public class CastFishingRod extends FishingWorld
         animationTimer_cast.mark();
         setImage(idleCastRod[imageIndex_f]);
         imageIndex_f = (imageIndex_f + 1) % idleCastRod.length;
+    }
+    public void act()
+    {
+        animateFishingRod();
     }
 }
