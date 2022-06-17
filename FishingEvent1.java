@@ -18,7 +18,7 @@ public class FishingEvent1 extends Actor
             for(int i=0; i < idleFishingEvent1.length; i++){
             idleFishingEvent1[i] = new GreenfootImage("images/fishingEvent1_idle/fishing" + i + ".png");
             setImage(idleFishingEvent1[i]);
-            idleFishingEvent1[i].scale(120, 120);
+            idleFishingEvent1[i].scale(250, 250);
         }
         animationTimer_event1.mark();
     }
@@ -30,6 +30,12 @@ public class FishingEvent1 extends Actor
         animationTimer_event1.mark();
         setImage(idleFishingEvent1[imageIndex_f]);
         imageIndex_f = (imageIndex_f + 1) % idleFishingEvent1.length;
+    }
+    public void hide(){
+        setLocation(284, 1200);
+    }
+    public void show(){
+        setLocation(284, 500);
     }
     public void act()
     {

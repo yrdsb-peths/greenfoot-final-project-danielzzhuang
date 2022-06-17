@@ -31,6 +31,12 @@ public class FishingEvent2 extends Actor
         setImage(idleFishingEvent2[imageIndex_f]);
         imageIndex_f = (imageIndex_f + 1) % idleFishingEvent2.length;
     }
+    public void hide(){
+        setLocation(284, 1200);
+    }
+    public void show(){
+        setLocation(284, 500);
+    }
     public void act()
     {
         animateFishingRod();

@@ -21,16 +21,21 @@ public class FishingRodWaiting extends Actor
             idleRodWaiting[i].scale(250, 250);
         }
         animationTimer_waiting.mark();
-
     }
-    int imageIndex_f=0;
+    int imageIndex=0;
     public void animateFishingRod(){
         if(animationTimer_waiting.millisElapsed() < 1300){
             return;
         }
         animationTimer_waiting.mark();
-        setImage(idleRodWaiting[imageIndex_f]);
-        imageIndex_f = (imageIndex_f + 1) % idleRodWaiting.length;
+        setImage(idleRodWaiting[imageIndex]);
+        imageIndex = (imageIndex + 1) % idleRodWaiting.length;
+    }
+    public void hide(){
+        setLocation(284, 1200);
+    }
+    public void show(){
+        setLocation(284, 500);
     }
     public void act()
     {
