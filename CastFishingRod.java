@@ -14,10 +14,10 @@ public class CastFishingRod extends Actor
      * Act - do whatever the FishingRod wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void CastFishingRod()
+    public CastFishingRod()
     {    
         for(int i=0; i < idleCastRod.length; i++){
-            idleCastRod[i] = new GreenfootImage("images/fcastRod_idle/castRod" + i + ".png");
+            idleCastRod[i] = new GreenfootImage("images/castRod_idle/castRod" + i + ".png");
             setImage(idleCastRod[i]);
             idleCastRod[i].scale(250, 250);
         }
