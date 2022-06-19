@@ -26,7 +26,6 @@ public class FishingWorld extends World
     public int fristRod_y=194;
     public int secondRod_y=fristRod_y+1*174;
     public int thridRod_y=548;
-    public int fish11_num=Fish.amountFish[11];
     
     SimpleTimer backpackTimer = new SimpleTimer();
     SimpleTimer fishingTimer = new SimpleTimer();
@@ -38,16 +37,14 @@ public class FishingWorld extends World
     public FishingWorld(){
         super(900,600,1, false);
 
-        
-
         Cat cat = new Cat();
         addObject(cat,250,560);
         
         backpack = new BackPackPage();        
-        addObject(backpack, 450, 300);
+        addObject(backpack, 900, 900);
         
         FishingRodWaiting fishingRodWaiting = new FishingRodWaiting();
-        addObject(fishingRodWaiting, 284, 500);
+        addObject(fishingRodWaiting, 284, 900);
         
         FishingEvent0 fishingEvent0 = new FishingEvent0();
         addObject(fishingEvent0, 284, 900);
@@ -60,32 +57,6 @@ public class FishingWorld extends World
         
         FishingRodStay fishingRodStay=new FishingRodStay();
         addObject(fishingRodStay, 284, 900);
-        
-        Label fish0_num = new Label(Fish.amountFish[0], 35);
-        addObject(fish0_num, fristRod_x+0*138, fristRod_y);
-        Label fish1_num = new Label(Fish.amountFish[1], 35);
-        addObject(fish1_num, fristRod_x+1*138, fristRod_y);
-        Label fish2_num = new Label(Fish.amountFish[2], 35);
-        addObject(fish2_num, fristRod_x+2*138, fristRod_y);
-        Label fish3_num = new Label(Fish.amountFish[3], 35);
-        addObject(fish3_num, fristRod_x+3*138, fristRod_y);
-        Label fish4_num = new Label(Fish.amountFish[4], 35);
-        addObject(fish4_num, fristRod_x+4*138, fristRod_y);
-        
-        Label fish5_num = new Label(Fish.amountFish[5], 35);
-        addObject(fish5_num, fristRod_x+0*138, secondRod_y);
-        Label fish6_num = new Label(Fish.amountFish[6], 35);
-        addObject(fish6_num, fristRod_x+1*138, secondRod_y);
-        Label fish7_num = new Label(Fish.amountFish[7], 35);
-        addObject(fish7_num, fristRod_x+2*138, secondRod_y);
-        Label fish8_num = new Label(Fish.amountFish[8], 35);
-        addObject(fish8_num, fristRod_x+3*138, secondRod_y);
-        Label fish9_num = new Label(Fish.amountFish[9], 35);
-        addObject(fish9_num, fristRod_x+4*138, secondRod_y);
-        
-        Label fish10_num = new Label(Fish.amountFish[10], 35);
-        addObject(fish10_num, fristRod_x+0*138, thridRod_y);
-        Label fish11_num = new Label(Fish.amountFish[11], 35);
     }
     public void castFishingRod(){
         CastFishingRod fishingRod_c = new CastFishingRod();
@@ -104,10 +75,9 @@ public class FishingWorld extends World
     
     
     public void act(){
-        /*
         if(isFishing){
             if (!canCatchFish) {
-                fishingRodWaiting.show();
+                //fishingRodWaiting.show();
                 int randomFishingEvent = Greenfoot.getRandomNumber(100);
                 if(randomFishingEvent>=82 && randomFishingEvent<=88){
                     fishingRodWaiting.hide();
@@ -126,13 +96,42 @@ public class FishingWorld extends World
                     fishingEvent2.hide();
                 }
             }
-        }*/
+        }
         
         if(backpackOpen){
             backpack.show();
+            showText(String.valueOf(Fish.amountFish[0]), fristRod_x+0*138, fristRod_y);
+            showText(String.valueOf(Fish.amountFish[1]), fristRod_x+1*138, fristRod_y);
+            showText(String.valueOf(Fish.amountFish[2]), fristRod_x+2*138, fristRod_y);
+            showText(String.valueOf(Fish.amountFish[3]), fristRod_x+3*138, fristRod_y);
+            showText(String.valueOf(Fish.amountFish[4]), fristRod_x+4*138, fristRod_y);
+            
+            showText(String.valueOf(Fish.amountFish[5]), fristRod_x+0*138, secondRod_y);
+            showText(String.valueOf(Fish.amountFish[6]), fristRod_x+1*138, secondRod_y);
+            showText(String.valueOf(Fish.amountFish[7]), fristRod_x+2*138, secondRod_y);
+            showText(String.valueOf(Fish.amountFish[8]), fristRod_x+3*138, secondRod_y);
+            showText(String.valueOf(Fish.amountFish[9]), fristRod_x+4*138, secondRod_y);
+            
+            showText(String.valueOf(Fish.amountFish[10]), fristRod_x+0*138, thridRod_y);
             showText(String.valueOf(Fish.amountFish[11]), fristRod_x+1*138, thridRod_y);
+            showText(String.valueOf(Fish.amountFish[12]), fristRod_x+2*138, thridRod_y);
         } else {
             backpack.hide();
+            showText("", fristRod_x+0*138, fristRod_y);
+            showText("", fristRod_x+1*138, fristRod_y);
+            showText("", fristRod_x+2*138, fristRod_y);
+            showText("", fristRod_x+3*138, fristRod_y);
+            showText("", fristRod_x+4*138, fristRod_y);
+            
+            showText("", fristRod_x+0*138, secondRod_y);
+            showText("", fristRod_x+1*138, secondRod_y);
+            showText("", fristRod_x+2*138, secondRod_y);
+            showText("", fristRod_x+3*138, secondRod_y);
+            showText("", fristRod_x+4*138, secondRod_y);
+            
+            showText("", fristRod_x+0*138, thridRod_y);
+            showText("", fristRod_x+1*138, thridRod_y);
+            showText("", fristRod_x+2*138, thridRod_y);
         }
 
         if(backpackTimer.millisElapsed() > 300){

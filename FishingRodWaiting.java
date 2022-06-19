@@ -17,8 +17,9 @@ public class FishingRodWaiting extends Actor
     public FishingRodWaiting(){
             for(int i=0; i < idleRodWaiting.length; i++){
             idleRodWaiting[i] = new GreenfootImage("images/fishingRodWaiting_idle/fishingRod" + i + ".png");
-            setImage(idleRodWaiting[i]);
             idleRodWaiting[i].scale(250, 250);
+            setImage(idleRodWaiting[i]);
+            
         }
         animationTimer_waiting.mark();
     }
@@ -31,8 +32,9 @@ public class FishingRodWaiting extends Actor
         setImage(idleRodWaiting[imageIndex]);
         imageIndex = (imageIndex + 1) % idleRodWaiting.length;
     }
+    FishingWorld world = (FishingWorld) getWorld();
     public void hide(){
-        setLocation(284, 1200);
+        setLocation(284, 1200);//284
     }
     public void show(){
         setLocation(284, 500);
