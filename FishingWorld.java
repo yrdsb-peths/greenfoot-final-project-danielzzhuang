@@ -34,7 +34,8 @@ public class FishingWorld extends World
     SimpleTimer fishingTimer = new SimpleTimer();
     SimpleTimer catchFishTimer = new SimpleTimer();
     SimpleTimer waitingFishTimer = new SimpleTimer();
-    SimpleTimer animationTimer_hide = new SimpleTimer();
+    SimpleTimer startFishingTimer_hide = new SimpleTimer();
+    SimpleTimer startFishingTimer = new SimpleTimer();
     /*
      * set up world, cat, fishing event, backpack[age, waiting fish, wait for fishing.
      */
@@ -86,16 +87,25 @@ public class FishingWorld extends World
         /*
          * During the fishing process, randomly generate a fishing event to get fish
          */
-        if(Greenfoot.isKeyDown("c")){
-            if(animationTimer_hide.millisElapsed() < 3000){
-                fishingRodCast.show();
+        
+        
+        
+        
+            if(Greenfoot.isKeyDown("f")){
+                if(startFishingTimer_hide.millisElapsed() > 1300){
+                    fishingRodCast.show();
+                    showText("hihi", 800, 500);
+                }
+                fishingRodCast.hide();
+                startFishingTimer_hide.mark();
+                isFishing=true;
+                showText("hi", 500, 500);
+                startFishingTimer.mark();
             }
-            fishingRodCast.hide();
-            animationTimer_hide.mark();
-            isFishing=true;
-        }
+        
         if(isFishing && fishingTimer.millisElapsed() > 30000){
-            if (!canCatchFish) {
+            if(!canCatchFish){
+                //showText("hihi", 600, 500);
                 fishingRodWaiting.show();
                 int randomFishingEvent = Greenfoot.getRandomNumber(100);
                 if(randomFishingEvent>=82 && randomFishingEvent<=88){

@@ -15,7 +15,7 @@ public class Fish extends Actor
     public Fish(int fishNumber, String name){
         fishNumber = fishNumber;
         fishName = name;
-        amountFish[fishNumber]++;
+        
     }
     //this method 2ill increase the fish amount of the input number type by 1
     public void addAmountFish(int num){
