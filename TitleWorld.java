@@ -23,7 +23,7 @@ public class TitleWorld extends World
         addObject(titleLabel, getWidth()/2, 100);
         
         
-        
+        /* v1.0
         Label instructionLabel_0 = new Label("Press <f> to fish when you in game", 40);
         addObject(instructionLabel_0, getWidth()/2, 300);
         
@@ -38,10 +38,9 @@ public class TitleWorld extends World
         
         Label instructionLabel_4 = new Label("Press <space> to begin", 30);
         addObject(instructionLabel_4, getWidth()/2, 500);
-        
+        */
 
-        /*
-         * v0.1
+        
         Label instructionLabel_0 = new Label("Press <f> to get fish", 40);
         addObject(instructionLabel_0, getWidth()/2, 300);
         
@@ -50,14 +49,13 @@ public class TitleWorld extends World
         
         Label instructionLabel_4 = new Label("Press <space> to begin", 30);
         addObject(instructionLabel_4, getWidth()/2, 500);
-        */
+        
     }
     public void act()
     {
-        
         if(Greenfoot.isKeyDown("space")){
-            FishingWorld fWorld = new FishingWorld();
-            Greenfoot.setWorld(fWorld);
+            snowyMountian_Night sWorld = new snowyMountian_Night();
+            Greenfoot.setWorld(sWorld);
         }
         /*v1.0
         if(Greenfoot.isKeyDown("space")){
