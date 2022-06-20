@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * 
+ * v0.1 is a simple game where you tap to get fish.
+ * v1.0 is game that a version of the game where the main function cannot be implemented.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -98,7 +99,7 @@ public class FishingWorld extends World
     }
     */
    
-    /*v1.0
+    
     if(Greenfoot.isKeyDown("f")){
         isFishing = true;
         fishingRodCast.show();
@@ -167,7 +168,7 @@ public class FishingWorld extends World
                 isFishing=false;
             }
         }
-        */
+        
         
         
         /*

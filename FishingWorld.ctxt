@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=FishingWorld
-comment0.text=\r\n\ \r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ v0.1\ is\ a\ simple\ game\ where\ you\ tap\ to\ get\ fish.\r\n\ v1.0\ is\ game\ that\ a\ version\ of\ the\ game\ where\ the\ main\ function\ cannot\ be\ implemented.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=FishingWorld()
 comment1.text=\r\n\ set\ up\ world,\ cat,\ fishing\ event,\ backpack[age,\ waiting\ fish,\ wait\ for\ fishing.\r\n
