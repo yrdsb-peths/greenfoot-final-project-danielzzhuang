@@ -22,6 +22,8 @@ public class TitleWorld extends World
         Label titleLabel = new Label("Fishing Game", 100);
         addObject(titleLabel, getWidth()/2, 100);
         
+        
+        /*v1.0
         Label instructionLabel_0 = new Label("Press <f> to fish when you in game", 40);
         addObject(instructionLabel_0, getWidth()/2, 300);
         
@@ -36,8 +38,19 @@ public class TitleWorld extends World
         
         Label instructionLabel_4 = new Label("Press <space> to begin", 30);
         addObject(instructionLabel_4, getWidth()/2, 500);
-        
+        */
 
+        /*
+         * v0.1
+        Label instructionLabel_0 = new Label("Press <f> to get fish", 40);
+        addObject(instructionLabel_0, getWidth()/2, 300);
+        
+        Label instructionLabel_10 = new Label("", 30);
+        addObject(instructionLabel_10, getWidth()/2, 500);
+        
+        Label instructionLabel_4 = new Label("Press <space> to begin", 30);
+        addObject(instructionLabel_4, getWidth()/2, 500);
+        */
     }
     public void act()
     {

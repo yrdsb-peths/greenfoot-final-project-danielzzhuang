@@ -9,7 +9,8 @@ import java.util.*;
 
 public class FishingWorld extends World
 {
-    
+    GreenfootSound bgm = new GreenfootSound("snowyBGM.mp3");
+    GreenfootSound watert = new GreenfootSound("Watert.mp3");
     public boolean isFishing = false;
     public boolean canCatchFish = false;
     public boolean backpackOpen=false;
@@ -25,6 +26,9 @@ public class FishingWorld extends World
     public FishingEvent1 fishingEvent1;
     public FishingEvent2 fishingEvent2;
     
+    public int randomFishingEvent;
+    public int randomFish;
+    
     public int fristRod_x=174;
     public int fristRod_y=194;
     public int secondRod_y=fristRod_y+1*174;
@@ -32,16 +36,24 @@ public class FishingWorld extends World
     
     SimpleTimer backpackTimer = new SimpleTimer();
     SimpleTimer fishingTimer = new SimpleTimer();
-    SimpleTimer catchFishTimer = new SimpleTimer();
+    SimpleTimer catchFishTimer_0 = new SimpleTimer();
+    SimpleTimer catchFishTimer_1 = new SimpleTimer();
+    SimpleTimer catchFishTimer_2 = new SimpleTimer();
     SimpleTimer waitingFishTimer = new SimpleTimer();
     SimpleTimer startFishingTimer_hide = new SimpleTimer();
-    SimpleTimer startFishingTimer = new SimpleTimer();
+    SimpleTimer startFishingTimer_show = new SimpleTimer();
+    SimpleTimer hideFihsingEvent = new SimpleTimer();
+    
+    
     /*
      * set up world, cat, fishing event, backpack[age, waiting fish, wait for fishing.
      */
     public FishingWorld(){
         super(900,600,1, false);
 
+        Label exLabel = new Label("", 40);
+        addObject(exLabel, 450, 450);
+    
         Cat cat = new Cat();
         addObject(cat,250,560);
         
@@ -68,73 +80,94 @@ public class FishingWorld extends World
         fishingRodCast = new FishingRodCast();
         addObject(fishingRodCast, 284, 900);
     }
-    /*
-     * set a timer to wait user catch fish
-     */
-    public void catchFish(){
-        if(catchFishTimer.millisElapsed() > 300){
-            fishingEvent0.show();
-            if(Greenfoot.isKeyDown("space")){
-                int randomFish = Greenfoot.getRandomNumber(13);
-                fish.addAmountFish(randomFish);
-                catchFishTimer.mark();
-            }
-        }
+    public void addFish(){
+        randomFish = Greenfoot.getRandomNumber(13);
+        fish.addAmountFish(randomFish);
     }
+    
     
     
     public void act(){
         /*
          * During the fishing process, randomly generate a fishing event to get fish
          */
-        
-        
-        
-        
-            if(Greenfoot.isKeyDown("f")){
-                if(startFishingTimer_hide.millisElapsed() > 1300){
-                    fishingRodCast.show();
-                    showText("hihi", 800, 500);
-                }
-                fishingRodCast.hide();
-                startFishingTimer_hide.mark();
-                isFishing=true;
-                showText("hi", 500, 500);
-                startFishingTimer.mark();
-            }
-        
-        if(isFishing && fishingTimer.millisElapsed() > 30000){
-            if(!canCatchFish){
-                //showText("hihi", 600, 500);
-                fishingRodWaiting.show();
-                int randomFishingEvent = Greenfoot.getRandomNumber(100);
-                if(randomFishingEvent>=82 && randomFishingEvent<=88){
-                    fishingRodWaiting.hide();
-                    catchFish();
-                    fishingEvent0.hide();
-                }
-                else if(randomFishingEvent>=88 && randomFishingEvent<=94){
-                    fishingRodWaiting.hide();
-                    catchFish();
-                    fishingEvent1.hide();
-                }
-                else if(randomFishingEvent>=94 && randomFishingEvent<=100)
-                {
-                    fishingRodWaiting.hide();
-                    catchFish();
-                    fishingEvent2.hide();
-                }
-                else{
-                    if(fishingTimer.millisElapsed() > 30000){
-                        fishingRodWaiting.show();
-                        if(Greenfoot.isKeyDown("R")){
+    bgm.play();
+    /*v0.1
+    if(Greenfoot.isKeyDown("f")){
+        addFish();
+    }
+    */
+   
+    /*v1.0
+    if(Greenfoot.isKeyDown("f")){
+        isFishing = true;
+        fishingRodCast.show();
+        showText("hihi", 300, 500);
+        startFishingTimer_show.mark();
+    }
+    if(startFishingTimer_hide.millisElapsed() > 450){
+            fishingRodCast.hide();
+            showText("hi", 500, 500);
+            startFishingTimer_hide.mark();
+    }
+        if(fishingTimer.millisElapsed() > 2000){
+            if(isFishing){
+                if(fishingTimer.millisElapsed() > 1000){
+                    randomFishingEvent = Greenfoot.getRandomNumber(100);
+                    if(randomFishingEvent >= 40 && randomFishingEvent <= 60){
+                        fishingEvent0.show();
+                        watert.play();
+                        if(catchFishTimer_0.millisElapsed() > 3000){
+                            if(Greenfoot.isKeyDown("space")){
+                                addFish();
+                            }
+                        }
+                        watert.play();
+                        catchFishTimer_0.mark();
+                        fishingEvent0.hide();
+                    }
+                    else if(randomFishingEvent >= 60 && randomFishingEvent <= 80){ 
+                        fishingEvent1.show();
+                        watert.play();
+                        if(catchFishTimer_1.millisElapsed() > 3000){
+                            if(Greenfoot.isKeyDown("space")){
+                                addFish();
+                                
+                            }
                             
                         }
+                        watert.play();
+                        catchFishTimer_1.mark();
+                        fishingEvent1.hide();
+                        
+                    }
+                    else if(randomFishingEvent >= 80 && randomFishingEvent <= 100)
+                    {
+                        fishingEvent2.show();
+                        watert.play();
+                        if(catchFishTimer_2.millisElapsed() > 3000){
+                            if(Greenfoot.isKeyDown("space")){
+                                addFish();
+                                
+                            }
+                            
+                        }
+                        watert.play();
+                        catchFishTimer_2.mark();
+                        fishingEvent2.hide();
+                        
+                    }   
+                    else{
+                        if(fishingTimer.millisElapsed() > 5000){
+                            fishingRodWaiting.show();
+                        }
+                        watert.play();
                     }
                 }
+                isFishing=false;
             }
-            fishingTimer.mark();
         }
+        */
         
         
         /*
@@ -187,6 +220,5 @@ public class FishingWorld extends World
                 backpackTimer.mark();
             }
         }
-
     }
 }

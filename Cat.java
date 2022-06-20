@@ -35,5 +35,6 @@ public class Cat extends Actor
 
     public void act(){
         animateCat();
+        
     }
 }

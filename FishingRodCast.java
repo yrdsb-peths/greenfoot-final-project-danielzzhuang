@@ -28,7 +28,7 @@ public class FishingRodCast extends Actor
     }
     int imageIndex_f=0;
     public void animateFishingRod(){
-        if(animationTimer_cast.millisElapsed() < 300){
+        if(animationTimer_cast.millisElapsed() < 100){
             return;
         }
         animationTimer_cast.mark();
