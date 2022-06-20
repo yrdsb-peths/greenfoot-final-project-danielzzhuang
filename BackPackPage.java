@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BackPackPage here.
+ * this is a backpack page class, use method hide and show to set location
  * 
  * @author (your name) 
  * @version (a version number or a date)

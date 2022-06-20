@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Cat here.
+ * this is a animated cat, also used to test when user start fishing
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -14,6 +14,7 @@ public class Cat extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     SimpleTimer animationTimer_grayCat = new SimpleTimer();
+    
     public Cat(){
         for(int i=0; i<idleGrayCat.length; i++){
             idleGrayCat[i] = new GreenfootImage("images/grayCatStandBy_idle/cat" + i + ".png");
@@ -34,12 +35,5 @@ public class Cat extends Actor
 
     public void act(){
         animateCat();
-        
-        // Cast the rod
-        FishingWorld world = (FishingWorld) getWorld();
-        if(Greenfoot.isKeyDown("c")){
-            world.castFishingRod();
-            world.isFishing=true;
-        }
     }
 }

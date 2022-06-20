@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=FishingEvent1
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ FishingEvent1\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ This\ class\ make\ image\ from\ the\ folder\ and\ turn\ it\ into\ an\ animated.\r\n\ hide\ and\ show\ is\ method\ that\ set\ location\ of\ this\ animated\ actor.\r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=FishingEvent1()
 comment2.params=

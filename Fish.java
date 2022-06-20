@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ClownFish here.
+ * this is a fish class that include: amount of fish and fish image 
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -11,18 +11,13 @@ public class Fish extends Actor
     private String fishName;
     private int fishNumber;
     public static int[] amountFish = new int[14];
-    GreenfootImage[] images = new GreenfootImage[14];
 
     public Fish(int fishNumber, String name){
-        for(int i = 0; i < images.length; i++){
-            images[i] = new GreenfootImage("images/fish/fish" + i +".png");
-        }
-        setImage(images[fishNumber]);
         fishNumber = fishNumber;
         fishName = name;
-        
         amountFish[fishNumber]++;
     }
+    //this method 2ill increase the fish amount of the input number type by 1
     public void addAmountFish(int num){
         amountFish[num]++;
     }
@@ -34,7 +29,4 @@ public class Fish extends Actor
     {
         // Add your action code here.
     }
-    /*public int setFishNum(int fishNum, int amount){
-        
-    }*/
 }

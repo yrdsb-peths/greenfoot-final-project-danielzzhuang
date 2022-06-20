@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class FishingEvent0 here.
+ * This class make image from the folder and turn it into an animated.
+ * hide and show is method that set location of this animated actor.
  * 
  * @author (your name) 
  * @version (a version number or a date)
