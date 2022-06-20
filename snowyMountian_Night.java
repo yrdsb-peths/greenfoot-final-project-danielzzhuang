@@ -44,6 +44,7 @@ public class snowyMountian_Night extends World
         fish.addAmountFish(randomFish);
     }
     public void act(){
+        bgm.play();
         if(Greenfoot.isKeyDown("f")){
         addFish();
         }
