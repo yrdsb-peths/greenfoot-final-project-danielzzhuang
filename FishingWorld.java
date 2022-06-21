@@ -13,7 +13,7 @@ public class FishingWorld extends World
     GreenfootSound bgm = new GreenfootSound("snowyBGM.mp3");
     GreenfootSound watert = new GreenfootSound("Watert.mp3");
     public boolean isFishing = false;
-    public boolean canCatchFish = false;
+    public boolean canCatchFish = true;
     public boolean backpackOpen=false;
     public boolean endFishing=false;
     
@@ -43,7 +43,7 @@ public class FishingWorld extends World
     SimpleTimer startFishingTimer_hide = new SimpleTimer();
     SimpleTimer startFishingTimer_show = new SimpleTimer();
     SimpleTimer hideFihsingEvent = new SimpleTimer();
-    
+    SimpleTimer testTimer = new SimpleTimer();
     
     /*
      * set up world, cat, fishing event, backpack[age, waiting fish, wait for fishing.
@@ -89,7 +89,7 @@ public class FishingWorld extends World
         /*
          * During the fishing process, randomly generate a fishing event to get fish
          */
-    bgm.play();
+    //bgm.play();
     
     if(Greenfoot.isKeyDown("f")){
         isFishing = true;
@@ -102,25 +102,29 @@ public class FishingWorld extends World
             showText("hide", 500, 500);
             startFishingTimer_hide.mark();
     }
-        if(fishingTimer.millisElapsed() > 2000){
+        
             if(isFishing){
-                if(fishingTimer.millisElapsed() > 1000){
                     randomFishingEvent = Greenfoot.getRandomNumber(100);
                     if(randomFishingEvent >= 0 && randomFishingEvent <= 100){
-
-                        fishingEvent0.show();
+                        
                         showText("event0 show", 500, 300);
+                        fishingEvent0.show();
                         watert.play();
-                        while(catchFishTimer_0.millisElapsed() < 5000){
-                            showText("timer0<3000", 200, 300);
+                        
+                        
+                        canCatchFish = true;
+                        catchFishTimer_0.mark();
+                        while(catchFishTimer_0.millisElapsed() < 5000 && canCatchFish){
+                            showText("timer0<5000", 200, 300);
                             if(Greenfoot.isKeyDown("space")){
                                 showText("event0 keydown space before addfish", 200, 350);
                                 addFish();
+                                canCatchFish = false;
                                 showText("timer0 keydown space", 200, 320);
                             }
                         }
                         watert.play();
-                        catchFishTimer_0.mark();
+                        
                         //fishingEvent0.hide();
                     }
                     else if(randomFishingEvent >= 60 && randomFishingEvent <= 80){ 
@@ -166,8 +170,7 @@ public class FishingWorld extends World
                     }
                 }
                 isFishing=false;
-            }
-        }
+        
         
         
         

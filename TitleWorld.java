@@ -53,10 +53,12 @@ public class TitleWorld extends World
     }
     public void act()
     {
+        
         if(Greenfoot.isKeyDown("space")){
             snowyMountian_Night sWorld = new snowyMountian_Night();
             Greenfoot.setWorld(sWorld);
         }
+        
         /*v1.0
         if(Greenfoot.isKeyDown("space")){
             FishingWorld fWorld = new FishingWorld();
